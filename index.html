@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин Смартфонов</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Магазин Смартфонов</h1>
+    </header>
+    <main>
+        <section id="products">
+            <article class="product-item">
+                <img src="qwer1.jpeg" alt="iPhone 13">
+                <h2>iPhone 13</h2>
+                <p class="spec">128GB, 6GB RAM</p>
+                <p class="price">250 000 тг</p>
+                <a href="#cart" class="btn-add" onclick="addToCart('iPhone 13', '250 000 тг')">Добавить в корзину</a>
+            </article>
+            <article class="product-item">
+                <img src="qwer2.jpeg" alt="Samsung Galaxy S21">
+                <h2>Samsung Galaxy S21</h2>
+                <p class="spec">256GB, 8GB RAM</p>
+                <p class="price">350 000 тг</p>
+                <a href="#cart" class="btn-add" onclick="addToCart('Samsung Galaxy S21', '350 000 тг')">Добавить в корзину</a>
+            </article>
+            <article class="product-item">
+                <img src="qwer3.jpeg" alt="Xiaomi Mi 11">
+                <h2>Xiaomi Mi 11</h2>
+                <p class="spec">128GB, 8GB RAM</p>
+                <p class="price">180 000 тг</p>
+                <a href="#cart" class="btn-add" onclick="addToCart('Xiaomi Mi 11', '180 000 тг')">Добавить в корзину</a>
+            </article>
+            <article class="product-item">
+                <img src="qwer4.jpeg" alt="Google Pixel 6">
+                <h2>Google Pixel 6</h2>
+                <p class="spec">128GB, 6GB RAM</p>
+                <p class="price">230 000 тг</p>
+                <a href="#cart" class="btn-add" onclick="addToCart('Google Pixel 6', '230 000 тг')">Добавить в корзину</a>
+            </article>
+            <article class="product-item">
+                <img src="qwer5.jpeg" alt="OnePlus 9">
+                <h2>OnePlus 9</h2>
+                <p class="spec">256GB, 12GB RAM</p>
+                <p class="price">320 000 тг</p>
+                <a href="#cart" class="btn-add" onclick="addToCart('OnePlus 9', '320 000 тг')">Добавить в корзину</a>
+            </article>
+            <article class="product-item">
+                <img src="qwer6.jpeg" alt="Oppo Reno 6">
+                <h2>Oppo Reno 6</h2>
+                <p class="spec">128GB, 8GB RAM</p>
+                <p class="price">210 000 тг</p>
+                <a href="#cart" class="btn-add" onclick="addToCart('Oppo Reno 6', '210 000 тг')">Добавить в корзину</a>
+            </article>
+            <article class="product-item">
+                <img src="qwer7.jpeg" alt="Huawei P50">
+                <h2>Huawei P50</h2>
+                <p class="spec">256GB, 8GB RAM</p>
+                <p class="price">280 000 тг</p>
+                <a href="#cart" class="btn-add" onclick="addToCart('Huawei P50', '280 000 тг')">Добавить в корзину</a>
+            </article>
+            <article class="product-item">
+                <img src="qwer8.jpeg" alt="Realme GT">
+                <h2>Realme GT</h2>
+                <p class="spec">128GB, 6GB RAM</p>
+                <p class="price">190 000 тг</p>
+                <a href="#cart" class="btn-add" onclick="addToCart('Realme GT', '190 000 тг')">Добавить в корзину</a>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <div id="cart">
+            <h2>Корзина</h2>
+            <ul id="cart-items"></ul>
+            <a href="#products" id="back-to-products">Вернуться к товарам</a>
+        </div>
+    </footer>
+
+    <script>
+        const cartItems = document.getElementById("cart-items");
+
+        function addToCart(productName, productPrice) {
+            const listItem = document.createElement("li");
+            listItem.textContent = `${productName} - ${productPrice}`;
+            cartItems.appendChild(listItem);
+
+            document.getElementById("cart").scrollIntoView({ behavior: "smooth" });
+        }
+    </script>
+</body>
+</html>
